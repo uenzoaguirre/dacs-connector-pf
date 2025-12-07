@@ -1,5 +1,7 @@
 package com.dacs.conector.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,12 +22,15 @@ public class PacienteController {
     @Autowired
     private PacienteService pacienteService;
 
-    @GetMapping()
-    public PacienteDto searchPaciente(@RequestParam("cantidad") int cantidad,
-            @RequestParam("nacionalidad") String nacionalidad) {
-        PacienteDto pacienteDto = pacienteService.getPacientes(cantidad, nacionalidad);
 
-        return pacienteDto;
+    //Ejemplo: http://localhost:9002/conector/api/external/paciente?cantidad=5&nacionalidad=es
+    @GetMapping()
+    public List<PacienteDto.Result> searchPaciente(@RequestParam("cantidad") int cantidad) {
+        PacienteDto pacienteDto = pacienteService.getPacientes(cantidad);
+
+        return pacienteDto.getResults();
     }
+
+    
 
 }

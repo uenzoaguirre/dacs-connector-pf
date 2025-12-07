@@ -7,7 +7,7 @@ feign:
         loggerLevel: basic
       apiClient:
         url: '${API_URL:https://jsonplaceholder.typicode.com}'
-      PacienteClient:
+      pacienteClient:
         url: '${API_URL:https://randomuser.me}'
 
 management:

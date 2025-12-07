@@ -15,10 +15,10 @@ public class PacienteServiceImpl implements PacienteService {
     private PacienteClient pacienteClient;
 
     @Override
-    public PacienteDto getPacientes(int cantidad, String nacionalidad) {
+    public PacienteDto getPacientes(int cantidad) {
         
 
-        PacienteDto response = pacienteClient.search(cantidad, nacionalidad);
+        PacienteDto response = pacienteClient.search(cantidad, "es");
 
         return response;
     }

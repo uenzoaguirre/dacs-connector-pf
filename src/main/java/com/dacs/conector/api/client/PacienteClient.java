@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dacs.conector.dto.PacienteDto;
 
-@FeignClient(name = "PacienteClient", url = "https://randomuser.me")
+@FeignClient(name = "pacienteClient", url = "${feign.client.config.pacienteClient.url}")
 
 public interface PacienteClient {
 

@@ -18,31 +18,26 @@ public class PacienteDto {
         private String cell;
         private Id id;
 
-        // getters y setters
     }
 
     @Data
     public static class Name {
         private String first;
         private String last;
-        // getters y setters
     }
 
     @Data
     public static class Location {
         private String city;
         private String state;
-        // getters y setters
     }
 
     @Data
     public static class Dob {
         private String date;
-        // getters y setters
     }
     @Data
     public static class Id {
         private String value;
-        // getters y setters
     }
 }
