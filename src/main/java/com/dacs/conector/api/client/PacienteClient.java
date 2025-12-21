@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.dacs.conector.dto.PacienteDto;
+import com.dacs.conector.dto.PacientesDto;
 
 @FeignClient(name = "pacienteClient", url = "${feign.client.config.pacienteClient.url}")
 
 public interface PacienteClient {
 
     @GetMapping("/api/")
-    PacienteDto search(
+    PacientesDto search(
             @RequestParam("results") int results,
             @RequestParam("nat") String nat);
 }

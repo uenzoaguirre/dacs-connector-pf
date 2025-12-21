@@ -1,12 +1,13 @@
 package com.dacs.conector.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
 import com.dacs.conector.api.client.PacienteClient;
-import com.dacs.conector.dto.PacienteDto;
+import com.dacs.conector.dto.PacientesDto;
 
 @Service
 public class PacienteServiceImpl implements PacienteService {
@@ -15,12 +16,11 @@ public class PacienteServiceImpl implements PacienteService {
     private PacienteClient pacienteClient;
 
     @Override
-    public PacienteDto getPacientes(int cantidad) {
-        
+    public ResponseEntity<PacientesDto> getPacientes(int cantidad) {
 
-        PacienteDto response = pacienteClient.search(cantidad, "es");
+        PacientesDto response = pacienteClient.search(cantidad, "es");
 
-        return response;
+        return ResponseEntity.ok(response);
     }
 
 }

@@ -5,7 +5,7 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class PacienteDto {
+public class PacientesDto {
     private List<Result> results;
 
     @Data

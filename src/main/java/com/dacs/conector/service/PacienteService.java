@@ -1,10 +1,12 @@
 package com.dacs.conector.service;
 
-import com.dacs.conector.dto.PacienteDto;
+import org.springframework.http.ResponseEntity;
+
+import com.dacs.conector.dto.PacientesDto;
 
 public interface PacienteService {
 
 
-    PacienteDto getPacientes(int cantidad);
+    ResponseEntity<PacientesDto> getPacientes(int cantidad);
 
 }
